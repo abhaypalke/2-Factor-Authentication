@@ -35,9 +35,9 @@ The authentication flow includes:
 
 ## Project Structure
 
+```text
 auth-system
-│
-├── config
+|
 │
 ├── controller
 │   ├── AuthController
@@ -72,7 +72,7 @@ auth-system
 │   ├── OtpServiceImpl
 │   ├── MailServiceImpl
 │   └── PasswordResetServiceImpl
-|
+│
 ├── security
 │   ├── CustomUserDetails
 │   ├── CustomUserDetailsService
@@ -96,7 +96,7 @@ auth-system
 │   └── PasswordMatchesValidator
 │
 └── AuthApplication
-
+```
 
 ## Database Design
 
@@ -106,6 +106,7 @@ The project uses three main entities:
 
 Stores user account information.
 
+```text
 +----------------+
 |     USERS      |
 +----------------+
@@ -116,11 +117,13 @@ Stores user account information.
 | enabled        |
 | email_verified |
 +----------------+
+```
 
 ### OTP Verification
 
 Stores OTP information associated with a user.
 
+```text
 +----------------------+
 | OTP_VERIFICATION     |
 +----------------------+
@@ -131,11 +134,13 @@ Stores OTP information associated with a user.
 | verified             |
 | user_id (FK)         |
 +----------------------+
+```
 
 ### Password Reset Token
 
 Stores tokens used for password reset functionality.
 
+```text
 +---------------------------+
 | PASSWORD_RESET_TOKEN      |
 +---------------------------+
@@ -145,9 +150,11 @@ Stores tokens used for password reset functionality.
 | used                      |
 | user_id                   |
 +---------------------------+
+```
 
 ### Entity Relationship
 
+```text
                 +----------------+
                 |     USERS      |
                 +----------------+
@@ -173,6 +180,7 @@ Stores tokens used for password reset functionality.
 | verified             |          | user_id                   |
 | user_id (FK)         |          +---------------------------+
 +----------------------+
+```
 
 ## Controllers
 
@@ -186,6 +194,7 @@ POST /login
 
 GET  /register
 POST /register
+```
 
 ### OtpController
 
